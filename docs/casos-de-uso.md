@@ -6,15 +6,11 @@ Este documento descreve os principais casos de uso do Sistema Acadêmico, repres
 
 Os casos de uso ajudam a entender como o sistema será utilizado na prática.
 
----
-
 ## 👥 2. Atores do Sistema
 
 - 👨‍🎓 Aluno
 - 👨‍🏫 Professor
 - 🛠️ Administrador
-
----
 
 ## 📋 3. Lista de Casos de Uso
 
@@ -31,11 +27,7 @@ Os casos de uso ajudam a entender como o sistema será utilizado na prática.
 | UC09 | Consultar cursos |
 | UC10 | Gerar relatórios |
 
----
-
 ## 📖 4. Detalhamento dos Casos de Uso
-
----
 
 ### 🎓 UC01 — Cadastrar Aluno
 
@@ -53,7 +45,6 @@ Os casos de uso ajudam a entender como o sistema será utilizado na prática.
 - Se o CPF já existir:
   - O sistema bloqueia o cadastro
 
----
 
 ### 📚 UC05 — Cadastrar Curso
 
@@ -66,8 +57,6 @@ Os casos de uso ajudam a entender como o sistema será utilizado na prática.
 2. Informa nome, carga horária, ementa e pré-requisitos
 3. O sistema valida os dados
 4. O sistema salva o curso
-
----
 
 ### 📝 UC07 — Realizar Matrícula
 
@@ -86,8 +75,6 @@ Os casos de uso ajudam a entender como o sistema será utilizado na prática.
 - Se não atender pré-requisitos:
   - O sistema impede a matrícula
 
----
-
 ### ❌ UC08 — Cancelar Matrícula
 
 **Ator:** Aluno  
@@ -105,8 +92,6 @@ Os casos de uso ajudam a entender como o sistema será utilizado na prática.
 - Fora do prazo:
   - O cancelamento é bloqueado
 
----
-
 ### 🔍 UC09 — Consultar Cursos
 
 **Ator:** Aluno / Professor  
@@ -116,8 +101,6 @@ Os casos de uso ajudam a entender como o sistema será utilizado na prática.
 **Fluxo Principal:**
 1. O usuário acessa a lista de cursos
 2. O sistema exibe os cursos disponíveis
-
----
 
 ### 📊 UC10 — Gerar Relatórios
 
@@ -129,8 +112,6 @@ Os casos de uso ajudam a entender como o sistema será utilizado na prática.
 1. O administrador acessa a área de relatórios
 2. Seleciona o tipo de relatório
 3. O sistema gera e exibe os dados
-
----
 
 ## 📌 5. Considerações Finais
 

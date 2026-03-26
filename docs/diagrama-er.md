@@ -4,8 +4,6 @@
 
 Este documento apresenta o Diagrama Entidade-Relacionamento (ER) do Sistema Acadêmico, com foco nas principais entidades envolvidas no gerenciamento de alunos, professores, cursos e matrículas.
 
----
-
 ## 🧱 2. Entidades Principais
 
 As entidades identificadas com base nos requisitos são:
@@ -14,8 +12,6 @@ As entidades identificadas com base nos requisitos são:
 - **Professor**
 - **Curso**
 - **Matrícula**
-
----
 
 ## 📝 3. Descrição das Entidades
 
@@ -30,8 +26,6 @@ Representa os estudantes cadastrados no sistema.
 - email
 - telefone
 
----
-
 ### Professor
 Representa os professores cadastrados.
 
@@ -44,8 +38,6 @@ Representa os professores cadastrados.
 - formacao
 - disciplina
 
----
-
 ### Curso
 Representa os cursos oferecidos pela instituição.
 
@@ -55,8 +47,6 @@ Representa os cursos oferecidos pela instituição.
 - carga_horaria
 - ementa
 - pre_requisitos
-
----
 
 ### Matrícula
 Representa o vínculo entre aluno e curso.
@@ -68,16 +58,12 @@ Representa o vínculo entre aluno e curso.
 - id_aluno
 - id_curso
 
----
-
 ## 🔗 4. Relacionamentos
 
 - Um **Aluno** pode possuir várias **Matrículas**
 - Um **Curso** pode possuir várias **Matrículas**
 - Uma **Matrícula** pertence a um único **Aluno**
 - Uma **Matrícula** pertence a um único **Curso**
-
----
 
 ## 🖼️ 5. Diagrama ER
 

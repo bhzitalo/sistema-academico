@@ -4,15 +4,11 @@
 
 Este documento apresenta o diagrama de casos de uso do Sistema Acadêmico, representando as interações entre os atores do sistema e suas principais funcionalidades.
 
----
-
 ## 👥 2. Atores do Sistema
 
 - **Aluno**
 - **Professor**
 - **Administrador**
-
----
 
 ## 📋 3. Casos de Uso Identificados
 
@@ -36,8 +32,6 @@ Este documento apresenta o diagrama de casos de uso do Sistema Acadêmico, repre
 - Gerenciar cursos
 - Gerenciar matrículas
 - Consultar relatórios
-
----
 
 ## 🖼️ 4. Diagrama de Casos de Uso
 

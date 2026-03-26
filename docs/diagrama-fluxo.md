@@ -4,8 +4,6 @@
 
 Este documento apresenta o diagrama de fluxo do Sistema Acadêmico, com foco no processo de matrícula em cursos, uma das funcionalidades centrais do sistema.
 
----
-
 ## 🧠 2. Fluxo Escolhido
 
 O fluxo abaixo representa o processo em que um aluno:
@@ -16,8 +14,6 @@ O fluxo abaixo representa o processo em que um aluno:
 - solicita matrícula
 - passa pela verificação de pré-requisitos
 - tem a matrícula aprovada ou bloqueada
-
----
 
 ## 🖼️ 3. Diagrama de Fluxo da Matrícula
 
@@ -36,3 +32,4 @@ flowchart TD
     F -- Não --> J[Bloquear matrícula]
     J --> K[Informar impedimento]
     K --> I
+```
