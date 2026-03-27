@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema Acadêmico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Sistema Acadêmico</h1>
+
+    <div class="form-box">
+      <form id="formAluno">
+        <input type="hidden" id="alunoId">
+
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="text" id="cpf" placeholder="CPF" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="date" id="data_nascimento" required>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+
+    <div class="lista-box">
+      <h2>Gerenciamento de Alunos</h2>
+      <ul id="listaAlunos"></ul>
+    </div>
+  </div>
+
+  <script>
+    const API = "http://localhost:3000/alunos";
+
+    // LISTAR ALUNOS
+    async function carregarAlunos() {
+      const res = await fetch(API);
+      const alunos = await res.json();
+
+      const lista = document.getElementById("listaAlunos");
+      lista.innerHTML = "";
+
+      alunos.forEach(aluno => {
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+          <span>${aluno.nome} - ${aluno.email}</span>
+          <div class="acoes">
+            <button class="btn-editar" onclick='editarAluno(${JSON.stringify(aluno)})'>Editar</button>
+            <button class="btn-excluir" onclick="deletarAluno(${aluno.id})">Excluir</button>
+          </div>
+        `;
+
+        lista.appendChild(li);
+      });
+    }
+
+    // DELETAR
+    async function deletarAluno(id) {
+      if (!confirm("Tem certeza que deseja excluir este aluno?")) return;
+
+      await fetch(`${API}/${id}`, {
+        method: "DELETE"
+      });
+
+      alert("Aluno deletado!");
+      carregarAlunos();
+    }
+
+    // EDITAR (preencher formulário)
+    function editarAluno(aluno) {
+      document.getElementById("alunoId").value = aluno.id;
+      document.getElementById("nome").value = aluno.nome;
+      document.getElementById("cpf").value = aluno.cpf;
+      document.getElementById("email").value = aluno.email;
+
+      const dataFormatada = aluno.data_nascimento.split("T")[0];
+      document.getElementById("data_nascimento").value = dataFormatada;
+
+      document.querySelector("#formAluno button").textContent = "Salvar Alterações";
+    }
+
+    // SUBMIT (POST ou PUT)
+    document.getElementById("formAluno").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const alunoId = document.getElementById("alunoId").value;
+      const nome = document.getElementById("nome").value;
+      const cpf = document.getElementById("cpf").value;
+      const email = document.getElementById("email").value;
+      const data_nascimento = document.getElementById("data_nascimento").value;
+
+      const dadosAluno = {
+        nome,
+        cpf,
+        email,
+        data_nascimento
+      };
+
+      if (alunoId) {
+        // PUT
+        await fetch(`${API}/${alunoId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(dadosAluno)
+        });
+
+        alert("Aluno atualizado com sucesso!");
+      } else {
+        // POST
+        await fetch(API, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(dadosAluno)
+        });
+
+        alert("Aluno cadastrado!");
+      }
+
+      document.getElementById("formAluno").reset();
+      document.getElementById("alunoId").value = "";
+      document.querySelector("#formAluno button").textContent = "Cadastrar";
+
+      carregarAlunos();
+    });
+
+    carregarAlunos();
+  </script>
+
+</body>
+</html>

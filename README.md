@@ -1,103 +1,165 @@
-# 📚 Sistema Acadêmico
+# 🎓 Sistema Acadêmico
 
-Projeto acadêmico desenvolvido com foco no gerenciamento de **alunos, professores, cursos e matrículas**.
+Sistema acadêmico completo desenvolvido com foco em aprendizado prático de desenvolvimento fullstack.
 
-O sistema tem como objetivo centralizar informações acadêmicas e otimizar processos de cadastro, consulta e matrícula.
+Este projeto permite o gerenciamento de alunos com operações completas de CRUD (Create, Read, Update, Delete), integrando frontend, backend e banco de dados.
 
-## 🎯 Objetivo
+---
 
-Desenvolver um sistema capaz de:
+## 🚀 Funcionalidades
 
-- cadastrar e atualizar alunos
-- cadastrar e atualizar professores
-- cadastrar e gerenciar cursos
-- realizar e cancelar matrículas
-- consultar informações acadêmicas
-- gerar relatórios administrativos
+- 📄 Listar alunos
+- ➕ Cadastrar novos alunos
+- ✏️ Editar informações de alunos
+- ❌ Excluir alunos
+- 🔄 Atualização automática da lista
 
-## 👥 Perfis de Usuário
+---
 
-O sistema contempla três perfis principais:
+## 🛠️ Tecnologias Utilizadas
 
-- **Aluno**
-- **Professor**
-- **Administrador**
-
-## ⚙️ Funcionalidades Principais
-
-- Cadastro de alunos
-- Atualização de dados dos alunos
-- Cadastro de professores
-- Atualização de dados dos professores
-- Cadastro de cursos
-- Atualização de cursos
-- Matrícula em cursos
-- Cancelamento de matrícula
-- Consulta de cursos
-- Geração de relatórios
-
-## 🛡️ Requisitos Não Funcionais
-
-- Controle de acesso por perfil
-- Proteção de dados com SSL/TLS
-- Suporte a até 2000 matrículas simultâneas
-- Tempo de resposta inferior a 2 segundos
-- Interface responsiva
-- Acessibilidade
-- Arquitetura modular
-- Escalabilidade
-
-## 🧰 Tecnologias Sugeridas
-
-### Front-end
+### 🔹 Frontend
 - HTML5
 - CSS3
-- JavaScript
-- React ou Angular
+- JavaScript (Vanilla)
 
-### Back-end
-- Node.js ou Django
-- API RESTful ou GraphQL
+### 🔹 Backend
+- Node.js
+- Express
 
-### Banco de Dados
+### 🔹 Banco de Dados
 - MySQL
 
-### Segurança
-- JWT ou OAuth 2.0
-- SSL/TLS
+### 🔹 Comunicação
+- API REST
 
-## 📂 Estrutura da Documentação
+---
 
-```bash
-docs/
-├── documentacao.md
-├── arquitetura.md
-├── regras-de-negocio.md
-├── casos-de-uso.md
-├── diagrama-casos-de-uso.md
-├── diagrama-er.md
-└── diagrama-fluxo.md
+## 📁 Estrutura do Projeto
+
+```
+sistema-academico/
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── db.js
+│   │   └── routes/
+│   │       └── alunoRoutes.js
+│   ├── node_modules/
+│   ├── package.json
+│   └── server.js
+│
+├── frontend/
+│   ├── index.html
+│   └── style.css
+│
+├── database/
+│   └── database.sql
+│
+└── README.md
 ```
 
-## 📖 Documentação
+---
 
-A documentação do projeto está organizada nos seguintes arquivos:
+## ⚙️ Como executar o projeto
 
-- [Documentação Geral](docs/documentacao.md)
-- [Arquitetura](docs/arquitetura.md)
-- [Regras de Negócio](docs/regras-de-negocio.md)
-- [Casos de Uso](docs/casos-de-uso.md)
-- [Diagrama de Casos de Uso](docs/casos-de-uso.md)
-- [Diagrama ER](docs/diagrama-er.md)
-- [Diagrama de Fluxo](docs/diagrama-fluxo.md)
+### 1️⃣ Clonar o repositório
 
-## 🚀 Possíveis Evoluções Futuras
-1. módulo de notas e boletins
-2. controle de turmas
-3. integração com biblioteca
-4. integração com sistema financeiro
-5. notificações automáticas
-6. painel administrativo avançado
+```bash
+git clone https://github.com/bhzitalo/sistema-academico.git
+```
 
-✅ Status do Projeto: 
-`Em fase de documentação e modelagem`
+---
+
+### 2️⃣ Configurar o banco de dados
+
+- Abra o MySQL
+- Execute o script:
+
+```text
+database/database.sql
+```
+
+---
+
+### 3️⃣ Configurar o backend
+
+```bash
+cd backend
+npm install
+node server.js
+```
+
+Servidor rodando em:
+```
+http://localhost:3000
+```
+
+---
+
+### 4️⃣ Abrir o frontend
+
+Abra o arquivo:
+
+```text
+frontend/index.html
+```
+
+---
+
+## 🔗 Rotas da API
+
+### 📄 Listar alunos
+```
+GET /alunos
+```
+
+### ➕ Cadastrar aluno
+```
+POST /alunos
+```
+
+### ✏️ Atualizar aluno
+```
+PUT /alunos/:id
+```
+
+### ❌ Deletar aluno
+```
+DELETE /alunos/:id
+```
+
+---
+
+## 💡 Aprendizados
+
+Este projeto foi desenvolvido com foco em:
+
+- Integração entre frontend e backend
+- Consumo de API com JavaScript
+- Manipulação de banco de dados MySQL
+- Estruturação de projetos fullstack
+- Organização de código em camadas
+
+---
+
+## 📌 Melhorias futuras
+
+- 🔐 Sistema de autenticação (JWT)
+- 🎨 Interface estilo dashboard
+- 📊 Painel com estatísticas
+- ⚛️ Migração para React
+- 🌐 Deploy em produção
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Ítalo Souza**  
+Estudante de Análise e Desenvolvimento de Sistemas
+
+---
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins acadêmicos.
